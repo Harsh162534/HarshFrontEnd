@@ -1,0 +1,56 @@
+<!-- <div class="container mt-4 " >
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">MyApp</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">   
+                        <a class="nav-link" routerLink="login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="register">Customer Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+
+<router-outlet></router-outlet> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar</title>
+</head>
+
+<body>
+
+  <div class="dashboard-container">
+    <div class="navbar">
+      <!-- Logo Section -->
+      <div class="navbar-logo">
+        <img src="assets/bank.png" alt="Logo">
+        <span><strong>Lendify</strong></span>
+      </div>
+
+      <!-- Menu Section -->
+      <div class="navbar-menu">
+    <a class="nav-link" routerLink="login">Login</a>
+    <a class="nav-link" routerLink="register">Customer Register</a>
+      </div>
+      </div>
+    </div>
+
+  <router-outlet></router-outlet>
+
+</body>
+
+</html>

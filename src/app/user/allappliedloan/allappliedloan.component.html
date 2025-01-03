@@ -1,0 +1,43 @@
+<div *ngIf="loans.length > 0" class="loan-table-container">
+  <h2>Loan Information</h2>
+  <table class="loan-schemes-table">
+    <thead>
+      <tr>
+        <th>Serial ID</th>
+        <th>Loan Name</th>
+        <th>Loan Amount</th>
+        <th>Total Repay Amount</th>
+        <th>Duration</th>
+        <th>Interest</th>
+        <th>Monthly Repayment</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let loan of loans">
+        <td>{{ loan.loan_id }}</td>
+        <td>{{ loan.loanscheme_id }}</td>
+        <td>{{ loan.loanamount }}</td>
+        <td>{{ loan.totalRepayAmount }}</td>
+        <td>{{ loan.time }}</td>
+        <td>{{ loan.simpleInterest }}</td>
+        <td>{{ loan.monthlyRepayment }}</td>
+        <td>{{ loan.loanstatus }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="totalPages > 1" class="pagination">
+    <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">
+      Previous
+    </button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button (click)="onPageChange(currentPage + 1)" [disabled]="currentPage === totalPages">
+      Next
+    </button>
+  </div>
+</div>
+
+<div *ngIf="loans.length === 0">
+  <p>No loan schemes available at the moment.</p>
+</div>

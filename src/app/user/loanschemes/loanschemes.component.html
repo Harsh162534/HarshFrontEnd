@@ -1,0 +1,45 @@
+<div *ngIf="loanSchemes.length > 0" class="loan-schemes-container">
+  <table class="loan-schemes-table">
+    <thead>
+      <tr>
+        <th>Scheme ID</th>
+        <th>Scheme Name</th>
+        <th>Max Amount</th>
+        <th>Min Amount</th>
+        <th>Interest Rate (%)</th>
+        <th>Actions</th> <!-- New column for button -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let scheme of loanSchemes">
+        <td>{{ scheme.schemeId }}</td>
+        <td>{{ scheme.schemename }}</td>
+        <td>{{ scheme.maxamount }}</td>
+        <td>{{ scheme.minamount }}</td>
+        <td>{{ scheme.interest }}</td>
+        <td>
+          <!-- Apply button for each loan scheme -->
+          <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#productModal" [routerLink]="['applyloan']">Apply</button>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Pagination Controls -->
+  <div *ngIf="totalPages > 1" class="pagination">
+    <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">
+      Previous
+    </button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button (click)="onPageChange(currentPage + 1)" [disabled]="currentPage === totalPages">
+      Next
+    </button>
+  </div>
+</div>
+
+<!-- Display message when no loan schemes are available -->
+<div *ngIf="loanSchemes.length === 0">
+  <p>No loan schemes available at the moment.</p>
+</div>
+<router-outlet></router-outlet>

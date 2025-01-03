@@ -1,0 +1,39 @@
+<div class="query-form-container">
+  <h2>Submit Your Query</h2>
+  <form #queryForm="ngForm" (ngSubmit)="onSubmit(queryForm)">
+    <div class="form-group">
+      <label for="userId">User ID:</label>
+      <input
+        type="number"
+        id="userId"
+        name="userId"
+        ngModel
+        required
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="question">Question:</label>
+      <textarea
+        id="question"
+        name="question"
+        rows="4"
+        ngModel
+        required
+        class="form-control"
+      ></textarea>
+    </div>
+    <div class="form-group">
+      <label for="querytype">Query Type:</label>
+      <select id="querytype" name="querytype" ngModel required class="form-control">
+        <option value="Emi issues">Emi issues</option>
+        <option value="Loan status">Loan status</option>
+        <option value="Payment problems">Payment problems</option>
+        <option value="Others">Others</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="queryForm.invalid">
+      Submit Query
+    </button>
+  </form>
+</div>

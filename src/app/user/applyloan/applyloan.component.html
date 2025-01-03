@@ -1,0 +1,46 @@
+<form [formGroup]="uploadForm" (ngSubmit)="onSubmit()" class="container mt-4">
+  <div class="mb-3">
+    <label for="file" class="form-label">Upload Adhar:</label>
+    <input type="file" id="file" (change)="onFileSelect($event)" class="form-control" />
+  </div>
+  <div class="mb-3">
+    <label for="file" class="form-label">Upload Pan Card:</label>
+    <input type="file" id="file" (change)="onFileSelect($event)" class="form-control" />
+  </div>
+  <div class="mb-3">
+    <label for="file" class="form-label">Upload Bank Statement:</label>
+    <input type="file" id="file" (change)="onFileSelect($event)" class="form-control" />
+  </div>
+
+  <div class="mb-3">
+    <label for="userId" class="form-label">User ID:</label>
+    <input id="userId" formControlName="userId" type="number" class="form-control" />
+  </div>
+
+  <div class="mb-3">
+    <label for="loanSchemeId" class="form-label">Loan Scheme ID:</label>
+    <input id="loanSchemeId" formControlName="loanSchemeId" type="number" class="form-control" />
+  </div>
+
+  <div class="mb-3">
+    <label for="loanAmount" class="form-label">Loan Amount:</label>
+    <input id="loanAmount" formControlName="loanAmount" type="number" class="form-control" />
+  </div>
+
+  <div class="mb-3">
+    <label for="time" class="form-label">Time (in years):</label>
+    <input id="time" formControlName="time" type="number" class="form-control" />
+  </div>
+
+  <!-- <div class="mb-3">
+    <label for="loanStatus" class="form-label">Loan Status:</label>
+    <input id="loanStatus" formControlName="loanStatus" type="text" class="form-control" />
+  </div>
+
+  <div class="mb-3 form-check">
+    <input id="closed" formControlName="closed" type="checkbox" class="form-check-input" />
+    <label for="closed" class="form-check-label">Closed</label>
+  </div> -->
+
+  <button type="submit" [disabled]="uploadForm.invalid || !file" class="btn btn-primary">Submit</button>
+</form>
