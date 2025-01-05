@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login/login.component';
-import { LandingViewComponent } from './landing-page/landing-view/landing-view.component';
-import { RegistrationComponent } from './register/registration/registration.component';
+import { LoginComponent } from './login/login/login/login.component';
+import { LandingViewComponent } from './landing-page/landing-page/landing-view/landing-view.component';
+import { RegistrationComponent } from './register/register/registration/registration.component';
 import { UserdashboardComponent } from './user/userdashboard/userdashboard.component';
 import { LoanschemesComponent } from './user/loanschemes/loanschemes.component';
 import { PaymentComponent } from './user/payment/payment.component';
@@ -15,6 +15,18 @@ import { LoanofficerdashboardComponent } from './loanofficer/loanofficerdashboar
 import { ViewloanrequestComponent } from './loanofficer/viewloanrequest/viewloanrequest.component';
 import { PendingloanrequestComponent } from './loanofficer/pendingloanrequest/pendingloanrequest.component';
 import { ProfileComponent } from './loanofficer/profile/profile.component';
+import { WelcomePageComponent } from './landing-page/landing-page/welcome-page/welcome-page.component';
+import { AdminViewComponent } from './admin/admin/admin-view/admin-view/admin-view.component';
+import { AdminDashboardComponent } from './admin/admin/admin-dashboard/admin-dashboard/admin-dashboard.component';
+import { AddLoanSchemeComponent } from './admin/admin/add-loan-scheme/add-loan-scheme/add-loan-scheme.component';
+import { UpdateLoanSchemeComponent } from './admin/admin/admin-update-loanScheme/update-loan-scheme/update-loan-scheme.component';
+import { ViewLoanSchemeComponent } from './admin/admin/admin-view-loanScheme/view-loan-scheme/view-loan-scheme.component';
+import { ViewLoanofficerReportComponent } from './admin/admin/view-loanOfficer-report/view-loanofficer-report/view-loanofficer-report.component';
+import { ViewNpaComponent } from './admin/admin/view-npa/view-npa/view-npa.component';
+import { ViewCustomerComponent } from './admin/admin/view-customer/view-customer/view-customer.component';
+import { AddLoanOfficerComponent } from './admin/admin/admin-loanOfficer/add-loan-officer/add-loan-officer.component';
+import { ViewLoanOfficerComponent } from './admin/admin/admin-view-loanOfficer/view-loan-officer/view-loan-officer.component';
+import { ViewLoanRequestComponent } from './admin/admin/view-loan-request/view-loan-request/view-loan-request.component';
 
 
 const routes: Routes = [
@@ -30,7 +42,58 @@ const routes: Routes = [
         path: "register",
         component: RegistrationComponent
       },
+      {
+        path:"welcome-page",
+        component:WelcomePageComponent
+      }
 
+    ]
+  },
+  {
+    path:"admin",
+    component:AdminViewComponent,
+    children:[
+      {
+        path:"admindashboard",
+        component:AdminDashboardComponent
+      },
+      {
+        path:"addloanscheme",
+        component: AddLoanSchemeComponent
+      },
+      {
+        path:"updateloanscheme",
+        component:UpdateLoanSchemeComponent
+      },
+      {
+        path:"viewloanscheme",
+        component: ViewLoanSchemeComponent
+      },
+      {
+        path:"report",
+        component:ViewLoanofficerReportComponent
+
+      },{
+        path:"npa",
+        component:ViewNpaComponent
+      },{
+        path:"customers",
+        component:ViewCustomerComponent
+      },
+      {
+        path:"addloanofficer",
+        component:AddLoanOfficerComponent
+      },
+      {
+        path:"manageloanofficer",
+        component:ViewLoanOfficerComponent
+      },
+      {
+        path:"viewloanRequest",
+        component:ViewLoanRequestComponent
+
+      }
+     
     ]
   },
   {

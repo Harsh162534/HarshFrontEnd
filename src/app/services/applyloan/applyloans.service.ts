@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -7,21 +7,21 @@ import { Observable } from 'rxjs';
 })
 export class ApplyloansService {
   
-  private apiUrl = 'http://localhost:8080/loanapp/upload'; // Replace with your actual API endpoint
+  private apiUrl = 'http://localhost:8080/loanapp/upload';
 
   constructor(private http: HttpClient) {}
 
   // Submit loan application using HTTP POST
   submitLoanApplication(application: { 
-    user_id: number; 
     loanamount: number; 
     time: number; 
-    loanscheme: { id: number; schemeName: string; }; 
+    loanscheme:number; 
   }): Observable<any> {
     return this.http.post(this.apiUrl, application);
   }
-
-  uploadFile(data: FormData): Observable<any> {
-    return this.http.post<any>(this.apiUrl, data);
+  uploadFile(data: FormData, loanSchemeId: any): Observable<any> {
+    const params = new HttpParams().set('loanSchemeId', loanSchemeId.toString());
+    return this.http.post<any>(this.apiUrl, data, { params });
   }
+  
 }

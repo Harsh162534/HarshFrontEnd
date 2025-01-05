@@ -1,0 +1,74 @@
+/* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #007bff; /* Trust blue color */
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo on the left */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.navbar-logo span {
+  font-size: 24px;
+  color: white;
+  font-weight: bold;
+}
+
+/* Navbar Links on the right */
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+
+/* Navbar Links */
+.nav-link {
+  font-size: 16px;
+  color: #f8f9fa; /* Light color for links */
+  text-decoration: none;
+  margin-left: 20px;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+/* Hover Effects */
+.nav-link:hover {
+  color: #ffcc00; /* Trust yellow/gold for hover effect */
+  text-decoration: underline;
+}
+
+/* Active Link */
+.nav-link.active {
+  color: #ffcc00; /* Trust yellow/gold for active link */
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navbar-logo {
+    margin-bottom: 15px;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    margin-top: 15px;
+  }
+
+  .nav-link {
+    margin: 10px 0;
+  }
+}

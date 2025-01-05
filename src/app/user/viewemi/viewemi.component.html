@@ -1,1 +1,16 @@
-<p>viewemi works!</p>
+<div class="container">
+    <h2>Pay EMI</h2>
+    <p>Select a loan scheme to view EMIs and manage payment.</p>
+    <div class="card-container">
+      <div class="card" *ngFor="let loan of loans">
+       <!--  <h3>Loan Scheme: {{ loan.schemeName }}</h3> -->
+         <p>Loan Id: {{loan.loanId}}</p>
+        <p>Loan Amount: {{ loan.loanAmount | currency }}</p>
+        <p>Total RepayAmount: {{ loan.loanRepayAmount | currency }}</p>
+        <p>Duration: {{ loan.duration }} Month</p>
+        <button (click)="viewEmis(loan.loanId)">View EMIs</button>
+      </div>
+    </div>
+  </div>
+  
+  <router-outlet></router-outlet>

@@ -14,6 +14,8 @@ import { AllappliedloanComponent } from './allappliedloan/allappliedloan.compone
 import { UpdateprofileComponent } from './updateprofile/updateprofile.component';
 import { ViewemiComponent } from './viewemi/viewemi.component';
 
+import { NgxSearchFilterModule } from 'ngx-search-filter';
+
  
 @NgModule({
   declarations: [
@@ -24,13 +26,12 @@ import { ViewemiComponent } from './viewemi/viewemi.component';
     ApplyloanComponent,
     AllappliedloanComponent,
     UpdateprofileComponent,
-    ViewemiComponent,
-    
-   
+    ViewemiComponent
    
   ],
   imports: [
-    CommonModule,RouterModule,AppRoutingModule,ReactiveFormsModule,FormsModule,
-  ]
+    CommonModule,RouterModule,AppRoutingModule,ReactiveFormsModule,FormsModule,NgxSearchFilterModule
+  ],
+  
 })
 export class UserModule { }
